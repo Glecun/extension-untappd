@@ -1,7 +1,7 @@
 <div x-data="component()" x-init="getBeers()" class="extension-untappd">
    <div class="beers">
       <template x-for="beer in beers">
-         <div x-on:click="searchBeer(beer)" x-transition class="beer">
+         <div x-on:click="searchBeer(beer)" class="beer">
             <span x-text="beer.nom"></span>
             -
             <span x-text="beer.couleur"></span>
@@ -12,6 +12,8 @@
    </div>
    <img :src="imgBeer" class="img-beer"/>
    <img :src="imgBeerBack" class="img-beer-back"/>
+   <!--<a :href="imgBeer" download class="download-img-beer">Télécharger</a>-->
+   <a x-on:click="download(imgBeer)" class="download-img-beer">Télécharger</a>
 </div>
 
 
@@ -33,15 +35,25 @@
       background-color: rgba(0, 0, 0, 0.86);
    }
 
-   .img-beer {
+   .extension-untappd .img-beer {
       position: absolute;
       width: 400px;
       top: 110px;
    }
 
-   .img-beer-back {
+   .extension-untappd .img-beer-back {
       position: absolute;
       width: 400px;
       top: 410px;
+   }
+
+   .extension-untappd .download-img-beer {
+      position: absolute;
+      top: 110px;
+      left: 304px;
+      background: white;
+      color: black;
+      padding: 5px;
+      border-radius: 5px;
    }
 </style>
