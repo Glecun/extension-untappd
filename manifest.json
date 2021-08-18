@@ -1,0 +1,10 @@
+{
+   "manifest_version": 2,
+   "name": "Extension Untappd",
+   "version": "1.0",
+   "content_scripts": [{"matches": ["https://untappd.com/*"], "js": ["inject.js"]}],
+   "web_accessible_resources": [
+      "beer-list-component/beer-list-component.html",
+      "beer-list-component/beer-list-component.js"
+   ]
+}

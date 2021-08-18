@@ -1,0 +1,47 @@
+<div x-data="component()" x-init="getBeers()" class="extension-untappd">
+   <div class="beers">
+      <template x-for="beer in beers">
+         <div x-on:click="searchBeer(beer)" x-transition class="beer">
+            <span x-text="beer.nom"></span>
+            -
+            <span x-text="beer.couleur"></span>
+            -
+            <span x-text="beer.variete"></span>
+         </div>
+      </template>
+   </div>
+   <img :src="imgBeer" class="img-beer"/>
+   <img :src="imgBeerBack" class="img-beer-back"/>
+</div>
+
+
+<style>
+   .extension-untappd .beers{
+      position: absolute;
+      right: 0;
+      top: 100px;
+      width: 378px;
+      height: 80vh;
+      overflow-y: scroll;
+   }
+
+   .extension-untappd .beers .beer {
+      cursor: pointer;
+   }
+
+   .extension-untappd .beer:hover {
+      background-color: rgba(0, 0, 0, 0.86);
+   }
+
+   .img-beer {
+      position: absolute;
+      width: 400px;
+      top: 110px;
+   }
+
+   .img-beer-back {
+      position: absolute;
+      width: 400px;
+      top: 410px;
+   }
+</style>
