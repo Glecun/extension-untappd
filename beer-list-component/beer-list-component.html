@@ -1,7 +1,7 @@
 <div x-data="component()" x-init="getBeers()" class="extension-untappd">
    <div class="beers">
       <template x-for="beer in beers">
-         <div x-on:click="searchBeer(beer)" class="beer">
+         <div x-on:click="searchBeer(beer)" class="beer"  x-bind:class="isCurrent(beer) ? 'current' : ''">
             <span x-text="beer.nom"></span>
             -
             <span x-text="beer.couleur"></span>
@@ -12,8 +12,7 @@
    </div>
    <img :src="imgBeer" class="img-beer"/>
    <img :src="imgBeerBack" class="img-beer-back"/>
-   <!--<a :href="imgBeer" download class="download-img-beer">Télécharger</a>-->
-   <a x-on:click="download(imgBeer)" class="download-img-beer">Télécharger</a>
+   <a :href="imgBeer" download class="download-img-beer">Télécharger</a>
 </div>
 
 
@@ -30,6 +29,11 @@
    .extension-untappd .beers .beer {
       cursor: pointer;
    }
+
+   .extension-untappd .beers .beer.current {
+      background-color: rgba(205, 179, 46, 0.86);
+   }
+
 
    .extension-untappd .beers .beer:hover {
       background-color: rgba(0, 0, 0, 0.86);
