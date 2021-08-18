@@ -18,3 +18,10 @@ function component() {
    }
 }
 
+(function autoClickWhenOneBeer() {
+   if(document.querySelectorAll('.beer-item').length === 1) {
+      document.querySelector('.beer-item .name a').click()
+   }
+})();
+
+
