@@ -1,7 +1,8 @@
 <div x-data="component()" x-init="getBeers()" class="extension-untappd">
    <div class="beers">
-      <template x-for="beer in beers">
-         <div x-on:click="searchBeer(beer)" class="beer"  x-bind:class="isCurrent(beer) ? 'current' : ''">
+      <template x-for="beer in beers" x-init="scrollToCurrentBeer()">>
+         <div x-on:click="searchBeer(beer)" class="beer"
+              x-bind:class="isCurrent(beer) ? 'current' : ''">
             <span x-text="beer.nom"></span>
             -
             <span x-text="beer.couleur"></span>

@@ -19,6 +19,13 @@ function component() {
       isCurrent(beer) {
          const generateId = (beer) => beer.nom+beer.couleur+beer.variete;
          return generateId(beer) === generateId(currentBeer)
+      },
+      scrollToCurrentBeer() {
+         setTimeout(() => {
+            const beerList = document.querySelector('.extension-untappd .beers');
+            const beerEl = document.querySelector('.extension-untappd .beers .beer.current');
+            beerList.scrollTop = (beerEl.offsetTop - beerList.offsetTop);
+         }, 1000)
       }
    }
 
