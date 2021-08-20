@@ -1,5 +1,4 @@
 # extension-untappd
-Extension Chrome pour automatiquement remplir les champs du site untappd afin d'ajouter les bières de mon site perso glebeer.
-
+Chrome extension to automatically fill in the fields of the untappd website in order to add the beers of my personal website: glebeer.
 ## Stack
 - [AlpineJs](https://alpinejs.dev/)
